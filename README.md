@@ -18,4 +18,21 @@ It will be hosted on Heroku and uses AWS servers.
 
 # Version Info 
 
-1.0.0 - Creating app and initial testing. 
+1.0.0 - Creating app and initial testing.
+Release - July 31st, 2019
+
+1.1.0 - Creating 'Character Add' in views and routes so user will first need to create a charater to save items to.
+Release - TBD 
+
+1.2.0 - Display items/spells/weapons into different areas of the page to make viewing easier.
+Release - TBD 
+
+1.3.0 - Allow for character backstory and development.
+Release - TBD 
+
+2.0.0 - Deployment and testing.
+Release - TBD 
+
+2.1.0 - Mobile Views
+Release - TBD 
+
