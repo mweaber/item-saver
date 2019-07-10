@@ -9,7 +9,7 @@ const Item = mongoose.model('items');
 
 // Item Index Page
 router.get('/', ensureAuthenticated, (req, res) => {
-    Item.find({ user: req.user.id })
+    Item.find({ character: req.character.id })
         .sort({ date: 'desc' })
         .then(items => {
             res.render('./items/index', {
@@ -30,7 +30,7 @@ router.get('/edit/:id', ensureAuthenticated, (req, res) => {
         _id: req.params.id
     })
         .then(item => {
-            if (item.user != req.user.id) {
+            if (item.character != req.character.id) {
                 req.flash('error_msg', 'Not Authorized');
                 res.redirect('/items');
             } else {
@@ -66,12 +66,12 @@ router.post('/', ensureAuthenticated, (req, res) => {
 
         // If all passes and errors is 0 than take the Item and save and redirect
     } else {
-        const newUser = {
+        const newCharacter = {
             title: req.body.title,
             details: req.body.details,
-            user: req.user.id
+            character: req.character.id
         }
-        new Item(newUser)
+        new Item(newCharacter)
             .save()
             .then(item => {
                 req.flash('success_msg', "Item Added");

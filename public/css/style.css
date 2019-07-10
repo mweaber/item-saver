@@ -1,5 +1,7 @@
-.logo{
-    width: 130px;
-    margin: auto;
+a{
+    padding: 7px;
+}
 
+.dropdown-items:hover{
+  color: green;
 }

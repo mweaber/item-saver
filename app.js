@@ -7,11 +7,12 @@ const methodOverride = require('method-override');
 const session = require('express-session');
 const flash = require('connect-flash')
 const passport = require('passport');
-const app = express();=
+const app = express();
 
 // Load Routes
 const items = require('./routes/items');
 const users = require('./routes/users');
+const characters = require('./routes/characters');
 
 // Map global promises
 mongoose.Promise = global.Promise;
@@ -83,8 +84,13 @@ app.get('/about', (req, res) => {
 // Use Items Routes
 app.use('/items', items);
 
+// Use Characters Routes
+app.use('/characters', characters);
+
 // Use Users Routes
 app.use('/users', users);
+
+
 
 // Passport Config
 require("./config/passport")(passport);

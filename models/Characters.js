@@ -1,17 +1,17 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-// Create Schema
-const ItemSchema = new Schema({
-    title: {
+// Create Character Page   
+const CharSchema = new Schema ({
+    charName: {
         type: String,
         required: true
     },
-    details: {
+    charClass: {
         type: String,
         required: true
     },
-    character: {
+    charRace: {
         type: String,
         required: true
     },
@@ -19,11 +19,10 @@ const ItemSchema = new Schema({
         type: String,
         required: true
     },
-    date: {
-        type: Date,
-        default: Date.now
+    item:{
+        type: Object,
     }
 
 });
 
-mongoose.model('items', ItemSchema);
+mongoose.model('characters', CharSchema);
